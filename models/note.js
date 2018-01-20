@@ -1,6 +1,9 @@
 const mongoose = require('mongoose')
 
-//const url = 'mongodb://fullstack:fullstack@ds211088.mlab.com:11088/fullstack-notes'
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 const url = process.env.MONGODB_URI
 
 mongoose.connect(url)
