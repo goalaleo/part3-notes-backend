@@ -77,10 +77,10 @@ app.post('/api/notes', (request, response) => {
 app.delete('/api/notes/:id', (request, response) => {
   Note
     .findByIdAndRemove(request.params.id)
-    .then(result => {
+    .then( () => {
       response.status(204).end()
     })
-    .catch(error => {
+    .catch( () => {
       response.status(400).send({ error: 'malformatted id' })
     })
 })
